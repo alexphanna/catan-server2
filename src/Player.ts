@@ -9,7 +9,7 @@ class Player {
     constructor(name: string) {
         this.name = name;
         this.resources = {
-            "Brick": 0,
+            "Brick": 15,
             "Grain": 0,
             "Lumber": 0,
             "Ore": 0,
@@ -25,4 +25,4 @@ class Player {
 
 const player = new Player("alex")
 
-console.log(player.resources["Bricks"])
+console.log(player.resources["Brick"])

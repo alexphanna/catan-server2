@@ -1,7 +1,20 @@
+import Vertex from "./Vertex";
+
 class Board {
-    // Resource map represented by array of arrays
-    // https://www.redblobgames.com/grids/parts/#hexagons
+    constructor(width: number) {
+        const height = (width - 3) * 2 + 1;
+        var resourceMap: Resource[][] = [];
+        for (let i = 0; i < height; i++) {
+            resourceMap.push([]);
+            for (let j = 0; j < width - Math.abs(i - (width - 3)); j++) {
+                resourceMap[i].push("Brick");
+            }
+        }
+        console.log(resourceMap);
+    }
 }
+
+const board = new Board(5);
 
 // Required Operations:
 //  - Find longest road
