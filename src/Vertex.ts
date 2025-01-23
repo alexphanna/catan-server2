@@ -1,6 +1,6 @@
 export default class Vertex {
-    readonly x: number
-    readonly y: number
+    readonly x: number;
+    readonly y: number;
 
     constructor(x: number, y: number) {
         this.x = x;
@@ -11,3 +11,13 @@ export default class Vertex {
         return [];
     }
 }
+
+/*
+Vertex coordinates:
+
+ 2,0╮  ╭2,1
+    ╱▔▔╲
+1,0╯╲▁▁╱╰1,1
+ 0,0╯  ╰0,1
+
+*/

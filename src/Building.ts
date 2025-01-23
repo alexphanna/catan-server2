@@ -8,6 +8,6 @@ class Building extends Vertex {
     }
 }
 
-const tile = new Building(0, 0, "Brick");
+const building = new Building(0, 0, "Brick");
 
-console.log(tile)
+console.log(building)
