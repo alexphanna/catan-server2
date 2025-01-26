@@ -1,13 +1,11 @@
 import Vertex from "./Vertex";
 
-class Building extends Vertex {
-    private resource: Resource
-    constructor(x: number, y: number, resource: Resource) {
+export default class Building extends Vertex {
+    private color: string
+    private isCity: boolean
+    constructor(x: number, y: number, color: string) {
         super(x, y);
-        this.resource = resource;
+        this.color = color;
+        this.isCity = false;
     }
 }
-
-const building = new Building(0, 0, "Brick");
-
-console.log(building)

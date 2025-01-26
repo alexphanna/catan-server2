@@ -1,11 +1,9 @@
-type Resource = "Brick" | "Grain" | "Lumber" | "Ore" | "Wool"
+import { Resource } from "./Game";
 
-type Building = "Settlement" | "City" | "Road"
-
-class Player {
+export default class Player {
     name: string;
     resources: Record<Resource, number>
-    buildings: Record<Building, number>
+    buildings: Record<"Settlement" | "City" | "Road", number>
     constructor(name: string) {
         this.name = name;
         this.resources = {

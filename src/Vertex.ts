@@ -1,23 +1,28 @@
 export default class Vertex {
-    readonly x: number;
-    readonly y: number;
+    readonly row: number;
+    readonly column: number;
 
-    constructor(x: number, y: number) {
-        this.x = x;
-        this.y = y;
+    constructor(row: number, column: number) {
+        this.row = row;
+        this.column = column;
     }
 
-    adjacentTiles() {
-        return [];
+    public equals(vertex: Vertex): boolean {
+        return this.row == vertex.row && this.column == vertex.column;
+    }
+
+    public adjacent(vertex: Vertex): boolean {
+        if (this.column % 2 == 0 && vertex.equals(new Vertex(this.row + 1, this.column + 1))) {
+            return true;
+        }
+        else if (vertex.equals(new Vertex(this.row - 1, this.column - 1))) {
+            return true;
+        }
+        for (let i = -1; i <= 1; i += 2) {
+            if (vertex.equals(new Vertex(this.row, this.column + i))) {
+                return true;
+            }
+        }
+        return false;
     }
 }
-
-/*
-Vertex coordinates:
-
- 2,0╮  ╭2,1
-    ╱▔▔╲
-1,0╯╲▁▁╱╰1,1
- 0,0╯  ╰0,1
-
-*/
